@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 9 - Gaurav Thakur</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #0073e6;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #005bb5;
+            padding: 1em 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1em;
+            padding: 0.5em 1em;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color: #004080;
+        }
+        .content {
+            margin: 2em;
+        }
+        .file-list {
+            list-style: none;
+            padding: 0;
+        }
+        .file-list li {
+            margin: 0.5em 0;
+            padding: 0.5em;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Class 9</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="class9.html">Class 9</a>
+        <a href="class10.html">Class 10</a>
+        <a href="class11.html">Class 11</a>
+        <a href="class12.html">Class 12</a>
+    </nav>
+    <div class="content">
+        <h2>Class 9 Notes, Assignments, and Tests</h2>
+        <input type="file" id="fileInput9">
+        <button onclick="uploadFile('class9')">Upload</button>
+        <ul id="fileList9" class="file-list"></ul>
+    </div>
+    <script>
+        function uploadFile(classId) {
+            var fileInput = document.getElementById('fileInput9');
+            var fileList = document.getElementById('fileList9');
+
+            if (fileInput.files.length > 0) {
+                var li = document.createElement('li');
+                li.textContent = fileInput.files[0].name;
+                fileList.appendChild(li);
+                fileInput.value = ''; // Clear the file input
+            }
+        }
+    </script>
+</body>
+</html>
